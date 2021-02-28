@@ -1,0 +1,74 @@
+.ga-tmm{
+    position: relative; 
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.ga-tmm-tab{
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 100%;
+    height: calc(100% - 83px);
+    display: none;
+}
+.tmm-menu,
+.tmm-menu ul,
+.tmm-controls{
+    margin: 20px;
+    padding: 0;
+    list-style: none;
+}
+.tmm-menu .sub-menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 20px;
+    background:  #f9f9f9;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+.tmm-uponelevel{
+    cursor: pointer;
+}
+.tmm-menu .sub-menu.open{
+    display: block;
+}
+.tmm-controls{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    bottom: 0;
+    position: absolute;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.tmm-control {
+    flex: 1;
+    text-align: center;
+    max-height: 80px;
+    
+}
+.tmm-control + .tmm-control{
+    border-left: 1px solid #ddd;
+}
+.tmm-control a{
+    display: block;
+    padding: 21px 0;
+    text-decoration: none;
+    background: #fff;
+}
+.tmm-control.open a,
+.tmm-control a:hover{
+    background: #f9f9f9;
+}
+.ga-tmm-tab.open{
+    display: block;
+    background: #f9f9f9;
+}
