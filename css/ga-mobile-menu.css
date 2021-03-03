@@ -1,0 +1,121 @@
+:root{
+  --dark-color: #000;
+  --light-color: #fff;
+  --gray-color : #ddd;
+}
+
+.ga-nav-container.ga-tab-content .ga-menu,
+#ga-tab-toggles.ga-tab-toggles{
+  list-style: none;
+  padding: 0;
+}
+.ga-tab-toggles{
+  display: flex;
+}
+
+.ga-mobile-menu-toggle:before,
+.ga-mobile-menu-toggle:after,
+.ga-tab-link{
+  display: block;
+}
+.ga-mobile-menu-toggle .toggle-line{
+  display: inline-block;
+}
+.ga-nav-container.ga-tab-content.active,
+.ga-tab-toggles .ga-tab-toggle.active .ga-tab-link,
+.ga-tab-toggles .ga-tab-toggle .ga-tab-link:hover,
+.ga-tab-toggles .ga-tab-toggle .ga-tab-link:focus{
+  background: var(--gray-color);
+}
+.ga-mobile-menu-toggle .toggle-line,
+.ga-mobile-menu-toggle:before,
+.ga-mobile-menu-toggle:after{
+  background : var(--dark-color);
+  height: 6px;
+}
+#ga-mobile-menu,
+#ga-tab-container,
+.ga-mobile-menu-toggle{
+  position: relative;
+}
+.ga-mobile-menu-toggle:before,
+.ga-mobile-menu-toggle:after,
+#ga-tab-container{
+  position: absolute;
+}
+.ga-mobile-menu-toggle{
+  height: 30px;
+  width: 30px;
+  margin: 0;
+}
+.ga-mobile-menu-toggle .toggle-line{
+  width: 6px;
+  border-radius: 50%;
+  opacity: 1;
+}
+.ga-mobile-menu-toggle:before,
+.ga-mobile-menu-toggle:after{
+  content: '';
+  width: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+  opacity: 0;
+}
+.ga-mobile-menu-toggle:after{
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.ga-mobile-menu-toggle.active .toggle-line{
+  opacity: 0;
+}
+.ga-mobile-menu-toggle.active:before,
+.ga-mobile-menu-toggle.active:after{
+  opacity: 1;
+}
+
+.ga-tab-toggles .ga-tab-toggle{
+  flex: 1 1 auto;
+}
+
+.ga-tab-link{
+  text-align: center;
+  font-size: 2rem;
+  transition: background 0.3s ease-in;
+}
+.ga-tab-link,
+.ga-nav-container.ga-tab-content .ga-menu{
+  padding: 1rem;
+}
+.ga-nav-container.ga-tab-content .ga-menu a{
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+#ga-mobile-menu{
+  text-align: right;
+}
+.ga-nav-container.ga-tab-content{
+  text-align: left;
+}
+#ga-tab-container{
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.ga-tab-content{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 58px);
+  display: none;
+  padding: 2rem;
+}
+.ga-tab-content.active{
+  display: block;
+}
+.ga-tab-toggles{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+}
