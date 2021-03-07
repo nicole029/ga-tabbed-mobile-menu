@@ -1,5 +1,5 @@
 <?php
-
+include( 'walker.php' );
 class GAViews{
   static function mobile_toggle( $text = null ){
     ?>
@@ -16,7 +16,7 @@ class GAViews{
 
   static function mobile_tab( $el, $text, $open = false, $tag = 'li' ){
       $css_classes = [
-        'ga-tab-toggle'
+        'ga-tab-link'
       ];
       if( $open ){
         $css_classes[] = 'active';
@@ -24,8 +24,8 @@ class GAViews{
 
       $css_class = implode( ' ', $css_classes );
     ?>
-      <<?php echo $tag; ?> class="<?php echo $css_class; ?>">
-        <a href="#<?php echo $el; ?>" class="ga-tab-link">
+      <<?php echo $tag; ?> class="ga-tab-toggle">
+        <a href="#<?php echo $el; ?>" class="<?php echo $css_class; ?>">
           <?php do_action( 'ga_before_tab_text' ); ?>
           <span><?php echo $text; ?></span>
           <?php do_action( 'ga_after_tab_text' ); ?>
@@ -49,7 +49,8 @@ class GAViews{
       'container_class' => $css_class,
       'container_id' => $el,
       'container' => 'nav',
-      'menu_class' => 'ga-menu'
+      'menu_class' => 'ga-menu',
+      'walker' => new GANavwalker
     ] );
   }
 }
